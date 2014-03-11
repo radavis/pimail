@@ -10,7 +10,8 @@ instructions
   2. > nano .env  # and input your information
   3. > source .env
   4. > chmod +x pimail.rb
-  5. > update-rc.d pimail.rb defaults
+  5. > ln -s pimail.rb /etc/init.d/pimail
+  6. > update-rc.d pimail.rb defaults
 
 note: some commands may require sudo.
 
