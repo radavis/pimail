@@ -10,4 +10,12 @@ instructions
   2. > nano .env  # and input your information
   3. > source .env
   4. > chmod +x pimail.rb
-  5. > update-rc.d pimail.rb defaults 100
+  5. > update-rc.d pimail.rb defaults
+
+note: some commands may require sudo.
+
+
+todo
+----
+  * load .env info automatically each time pimail.rb is run
+  * handle delivery errors
