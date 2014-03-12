@@ -16,11 +16,9 @@ Subject: #{opts[:subject]}
 
 #{opts[:body]}
 END_OF_MESSAGE
-
-  email = Net::SMTP.new(opts[:server], opts[:port])
-  email.enable_starttls
-
   begin
+    email = Net::SMTP.new(opts[:server], opts[:port])
+    email.enable_starttls
     email.start(opts[:from_domain], opts[:from], opts[:password], :login) do |smtp|
       smtp.send_message(msg, opts[:from], opts[:to])
     end
