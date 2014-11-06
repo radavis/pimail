@@ -1,11 +1,13 @@
 #!/bin/bash
 
 sendEmail \
--f from@hostname.com \
--t to@hostname.com \
--u "Your RaspberryPi is up at $(hostname -I)!" \
--m "Message Body: $(ifconfig)" \
--s smtp-server.hostname.com \
--o tls=auto \
--xu username \
--xp password
+  -v \
+  -l pimail.log \
+  -f from@hostname.com \
+  -t to@hostname.com \
+  -u "Your RaspberryPi is up at $(hostname -I)!" \
+  -m "Message Body: $(ifconfig)" \
+  -s smtp-server.hostname.com \
+  -o tls=auto \
+  -xu username \
+  -xp password
